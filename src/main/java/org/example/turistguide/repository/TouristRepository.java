@@ -38,7 +38,7 @@ public class TouristRepository {
         ArrayList<TouristAttraction> touristAttraction = new ArrayList<>();
         for (TouristAttraction touristAttraction1 : touristAttractions) {
             if (touristAttraction1.getDescription().contains(description)) {
-                touristAttractions.add(touristAttraction1);
+                touristAttraction.add(touristAttraction1);
             }
         }
         return touristAttraction;
