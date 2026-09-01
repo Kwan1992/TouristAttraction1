@@ -27,8 +27,8 @@ public class TouristService {
         return attraction;
     }
 
-    public List<TouristAttraction> getTouristAttractionsByDescription(String keyword) {
-        return touristRepository.findTouristAttractionsByDescription(keyword);
+    public List<TouristAttraction> getTouristAttractionsByDescription(String description) {
+        return touristRepository.findTouristAttractionsByDescription(description);
     }
 }
 
