@@ -33,15 +33,15 @@ public class TouristService {
 
 
     public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
-        return touristAttraction;
+        return touristRepository.save(touristAttraction);
     }
 
     public TouristAttraction updateTouristAttraction(String name, TouristAttraction touristAttraction) {
-        return touristAttraction;
+        return touristRepository.updateTouristAttraction(name, touristAttraction);
     }
 
     public boolean deleteTouristAttraction(String name) {
-        return false;
+        return touristRepository.deleteTouristAttraction(name);
     }
 }
 
