@@ -68,6 +68,7 @@ public class TouristRepository {
     public void populate() {
         touristAttractions.add(new TouristAttraction("Tivoli Gardens", "19th-century amusement park with antique roller coaster & live entertainment program."));
         touristAttractions.add(new TouristAttraction("Rosenborg Castle", "Dutch Renaissance palace & gardens, including a museum housing the crown jewels, with guided tours."));
+        touristAttractions.add(new TouristAttraction("Frederiksborg Castle", "Dutch Renaissance palace & gardens, including a museum housing the crown jewels, with guided tours."));
         touristAttractions.add(new TouristAttraction("Nyhavn", "Copenhagen's Nyhaven, or \"New Harbor,\" is actually steeped in a long heritage. Colorful buildings line the canal and hint at a history of small-vessel traffic. "));
         touristAttractions.add(new TouristAttraction("The Little Mermaid", "Bronze statue by Edvard Eriksen depicting a mermaid, based on the fairy tale by Hans Christian Andersen."));
         touristAttractions.add(new TouristAttraction("Christiansborg Palace", "Seat of the Danish Parliament, the Supreme Court, and the Prime Minister's office, with a royal reception hall."));
