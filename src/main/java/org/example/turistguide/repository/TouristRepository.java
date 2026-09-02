@@ -78,4 +78,8 @@ public class TouristRepository {
     public TouristAttraction findTouristAttractionByName(String name) {
         return null;
     }
+
+    public List<TouristAttraction> getTouristAttractions() {
+        return touristAttractions;
+    }
 }
