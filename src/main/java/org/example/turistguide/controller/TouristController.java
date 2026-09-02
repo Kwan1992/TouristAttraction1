@@ -10,14 +10,14 @@ import java.util.List;
 @RestController
 @RequestMapping("attractions")
 public class TouristController {
-    private final TouristService touristService; // bruger service til logik
+    private final TouristService touristService;
 
     public TouristController(TouristService touristService) { // constructor injection
         this.touristService = touristService;
     }
 
     @GetMapping
-    public ResponseEntity<List<TouristAttraction>> getAll() { // GET /attractions
+    public ResponseEntity<List<TouristAttraction>> getAll() {
         return ResponseEntity.ok(touristService.getAllTouristAttractions());
     }
 
