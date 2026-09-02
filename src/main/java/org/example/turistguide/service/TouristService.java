@@ -20,7 +20,7 @@ public class TouristService {
     }
 
     public TouristAttraction getTouristAttractionByName(String name) {
-        TouristAttraction attraction = touristRepository.findTouristAttractionByName(name);
+        TouristAttraction attraction = touristRepository.findByName(name);
         if (attraction == null) {
             throw new IllegalArgumentException("Tourist attraction not found: " + name);
         }
