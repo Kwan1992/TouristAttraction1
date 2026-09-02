@@ -15,12 +15,12 @@ public class TouristService {
         this.touristRepository = touristRepository;
     }
 
-    public List<TouristAttraction> getAllTouristAttractions() {
-        return touristRepository.getTouristAttractions();
+    public List<TouristAttraction> findAll() {
+        return touristRepository.findAll();
     }
 
-    public TouristAttraction getTouristAttractionByName(String name) {
-        TouristAttraction attraction = touristRepository.findTouristAttractionByName(name);
+    public TouristAttraction findByName(String name) {
+        TouristAttraction attraction = touristRepository.findByName(name);
         if (attraction == null) {
             throw new IllegalArgumentException("Tourist attraction not found: " + name);
         }
