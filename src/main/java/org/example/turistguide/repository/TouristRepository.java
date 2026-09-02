@@ -75,4 +75,7 @@ public class TouristRepository {
         touristAttractions.add(new TouristAttraction("Amalienborg Palace", "Winter home of the Danish royal family, consisting of four identical palace buildings around an octagonal courtyard."));
     }
 
+    public TouristAttraction findTouristAttractionByName(String name) {
+        return null;
+    }
 }

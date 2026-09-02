@@ -30,7 +30,21 @@ public class TouristService {
     public List<TouristAttraction> getTouristAttractionsByDescription(String description) {
         return touristRepository.findTouristAttractionsByDescription(description);
     }
+
+
+    public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
+        return touristAttraction;
+    }
+
+    public TouristAttraction updateTouristAttraction(String name, TouristAttraction touristAttraction) {
+        return touristAttraction;
+    }
+
+    public boolean deleteTouristAttraction(String name) {
+        return false;
+    }
 }
+
 
 
 
