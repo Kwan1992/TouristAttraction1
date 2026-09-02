@@ -72,17 +72,33 @@ img {
 p {
     color: #99A6B2;
 }
-ul {
+.useful-links {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.useful-links h2 {
+    color: #34435E;
+}
+
+.useful-links ul {
     color: black;
-    display: block;
 }
 
-li {
-    margin: 10px;
+.useful-links li {
+    margin: 10px 0;
 }
 
-a {
-    color: blue;
+.useful-links a {
+    color: #34435E;
+    text-decoration: none;
+}
+
+.useful-links a:hover {
+    text-decoration: underline;
 }
 
 footer {
