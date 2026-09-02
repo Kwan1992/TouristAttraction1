@@ -72,6 +72,19 @@ img {
 p {
     color: #99A6B2;
 }
+ul {
+    color: black;
+    display: block;
+}
+
+li {
+    margin: 10px;
+}
+
+a {
+    color: blue;
+}
+
 footer {
     text-align: center;
 }
