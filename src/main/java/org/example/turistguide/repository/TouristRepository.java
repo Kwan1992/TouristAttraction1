@@ -49,7 +49,7 @@ public class TouristRepository {
 
     public TouristAttraction findByName(String name) {
         for (TouristAttraction touristAttraction: touristAttractions)
-            if (touristAttraction.getName().equals(name)){
+            if (touristAttraction.getName().equalsIgnoreCase(name)){
                 return touristAttraction;
             }
         return null;
@@ -66,7 +66,7 @@ public class TouristRepository {
     }
 
     public void populate() {
-        touristAttractions.add(new TouristAttraction("Tivoli Gardens", "19th-century amusement park with antique roller coaster & live entertainment program."));
+        touristAttractions.add(new TouristAttraction("Tivoli", "19th-century amusement park with antique roller coaster & live entertainment program."));
         touristAttractions.add(new TouristAttraction("Rosenborg Castle", "Dutch Renaissance palace & gardens, including a museum housing the crown jewels, with guided tours."));
         touristAttractions.add(new TouristAttraction("Frederiksborg Castle", "Dutch Renaissance palace & gardens, including a museum housing the crown jewels, with guided tours."));
         touristAttractions.add(new TouristAttraction("Nyhavn", "Copenhagen's Nyhaven, or \"New Harbor,\" is actually steeped in a long heritage. Colorful buildings line the canal and hint at a history of small-vessel traffic. "));
