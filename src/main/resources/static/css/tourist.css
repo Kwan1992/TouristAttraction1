@@ -66,6 +66,13 @@ img {
     color: #0A0F1C;
     margin-top: 0;
 }
+.box a {
+    text-decoration: none;
+}
+.box h2 {
+    color: #0A0F1C;
+    margin-top: 0;
+}
 .box:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
