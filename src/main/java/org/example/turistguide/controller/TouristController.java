@@ -3,11 +3,12 @@ package org.example.turistguide.controller;
 import org.example.turistguide.model.TouristAttraction;
 import org.example.turistguide.service.TouristService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("attractions")
 public class TouristController {
     private final TouristService touristService;
