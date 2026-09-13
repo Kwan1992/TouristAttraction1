@@ -20,10 +20,12 @@ public class TouristController {
         return "index";
     }
 
+
     @GetMapping("/copenhagen")
     public String copenhagen() {
         return "copenhagen";
     }
+
 
     @GetMapping("/attractions")
     public String getAllAttractions(Model model) {
@@ -31,11 +33,17 @@ public class TouristController {
         return "attractionList";
     }
 
+
     @GetMapping("/attractions/{name}")
     public ResponseEntity<TouristAttraction> getByName(@PathVariable String name) { // GET /attractions/{name}
         TouristAttraction attraction = touristService.getTouristAttractionByName(name);
         if (attraction == null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(attraction);
+    }
+    @GetMapping("/attractions/{name}/tags")
+    public String showTags(Model model, @PathVariable String name) {
+        model.addAttribute("attraction", touristService.getTouristAttractionByName(name));
+        return "tags";
     }
 
     @PostMapping("/attractions/add")

@@ -1,15 +1,74 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" th:href="@{/main.css}">
     <title> Attractions</title>
 </head>
+
 <body>
-<table>
-  <tr th:each="attraction : ${attractions}">
-    <td th:text="${attraction.name}"></td>
-    <td th:text="${attraction.description}"></td>
-  </tr>
-</table>
+<header class="site-header">
+    <nav class="nav-shell" aria-label="Main navigation">
+        <a class="brand" th:href="@{/}" aria-label="Tourist guide home">
+            <span class="brand-mark">TG</span>
+            <span>Tourist guide</span>
+        </a>
+        <div class="nav-links">
+
+        </div>
+    </nav>
+</header>
+<h1 class="page-title"> Tourist Attractions </h1>
+<div layout:fragment="content" >
+    <div class="table-wrap">
+        <table class="bilag3 body"  >
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="attraction : ${attractions}">
+                <td th:text="${attraction.name}" ></td>
+                <td th:text="${attraction.description}"></td>
+                <td>
+                    <a th:href="@{/attractions/{name}/tags(name=${attraction.name})}">
+                    <button type="button" class="button button1"> Tags</button>
+                    </a>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div layout:fragment = "content">
+    <button type="button" class="button button2"> Add Attraction </button>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-shell">
+        <div>
+            <a class="brand footer-brand" th:href="@{/}">
+                <span class="brand-mark">TG</span>
+                <span>Tourist guide</span>
+            </a>
+            <p class="footer-note">A small guide for big days out.</p>
+        </div>
+        <span class="footer-year">&copy; 2026 Tourist Attraction in Denmark.</span>
+        <div class="footer-contact">
+            <span class="footer-label">Contact</span>
+            <a href="mailto:hello@touristguide.example">hello@touristguide.example</a>
+            <span>Copenhagen &middot; Denmark</span>
+        </div>
+    </div>
+</footer>
+
 </body>
+
 </html>

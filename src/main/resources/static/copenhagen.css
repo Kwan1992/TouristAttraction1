@@ -113,4 +113,17 @@ footer {
         grid-template-columns: 1fr;
         gap: 16px;
     }
+    .tags-button {
+        background-color: #04AA6D;
+        color: white;
+        font-size: 15px;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .tags-button:hover {
+        background-color: #34435E;
+    }
 }
