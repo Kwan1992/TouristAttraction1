@@ -1,87 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/main.css}">
-    <title>Tourist Guide</title>
-</head>
+<head th:replace="~{fragment :: head('Explore Denmark')}"></head>
 <body>
+<header th:replace="~{fragment :: header('home')}"></header>
 
-<header class="site-header">
-    <nav class="nav-shell" aria-label="Main navigation">
-        <a class="logo" th:href="@{/}" aria-label="Tourist guide home">
-            <span class="logo-badge badge-red">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 12L21 3L14 21L11 13L2 12Z" fill="#ffffff"/>
-                </svg>
-            </span>
-            <span class="logo-text">
-                <span class="main">Turistguide</span>
-                <span class="sub">Explore Denmark</span>
-            </span>
-        </a>
-        <div class="nav-links">
-            <a class="nav-cta" th:href="@{/copenhagen}">Copenhagen</a>
-            <a class="nav-cta" th:href="@{/attractions}">Zealand</a>
-            <a class="nav-cta" th:href="@{/attractions}">Fyn</a>
-            <a class="nav-cta" th:href="@{/attractions}">Jutland</a>
-        </div>
-    </nav>
-</header>
-
-<main class="main-container">
-
+<main class="container">
     <section class="hero">
-        <div class="hero-content">
-            <h1 id="main-header">Tourist Attractions in Denmark</h1>
-            <p class="hero-text">
-                From the coast of Jutland to the streets of Copenhagen, discover the places worth
-                packing your bags for. Wander through windswept dunes, cozy fishing villages,
-                and historic castles, then finish the day with fresh seafood and a view of
-                the sea.
-            </p>
+        <div>
+            <p class="eyebrow">Explore Denmark</p>
+            <h1>Places worth packing your bags for.</h1>
+            <p class="lead">Castles, canals and coast. A simple guide to where to go and what to see.</p>
+            <div class="actions">
+                <a class="btn" th:href="@{/attractions}">Browse attractions</a>
+                <a class="btn btn-ghost" th:href="@{/copenhagen}">Visit Copenhagen</a>
+            </div>
         </div>
-        <a class="hero-cta" th:href="@{/attractions}">View all attractions</a>
+        <img class="hero-photo" th:src="@{/images/welcome-page1-web.jpg}" alt="Colourful Danish harbour view">
     </section>
 
-    <section class="highlight">
+    <section class="tiles">
+        <a class="tile" th:href="@{/copenhagen}">
+            <h3>Copenhagen</h3>
+            <p>Palaces, harbours and family favourites in the capital.</p>
+            <span class="link">Explore the city →</span>
+        </a>
+        <a class="tile" th:href="@{/attractions}">
+            <h3>All attractions</h3>
+            <p>Search the full list and see what each place is good for.</p>
+            <span class="link">See the list →</span>
+        </a>
+    </section>
+
+    <section class="section">
         <h2>Useful links</h2>
-        <ul>
-            <li><a href="https://www.booking.com/" target="_blank" rel="noopener noreferrer">Hotels Copenhagen</a></li>
-            <li><a href="https://www.tripadvisor.com/Restaurants-g189541-Copenhagen_Zealand.html" target="_blank" rel="noopener noreferrer">Gastronomic in Copenhagen</a></li>
-            <li><a href="https://www.uber.com/dk/en/r/cities/taxi/copenhagen-capital-region-dk/" target="_blank" rel="noopener noreferrer">Uber Taxi Denmark</a></li>
+        <ul class="link-list">
+            <li><a href="https://www.booking.com/" target="_blank" rel="noopener noreferrer"><span>Hotels in Copenhagen</span><span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://www.tripadvisor.com/Restaurants-g189541-Copenhagen_Zealand.html" target="_blank" rel="noopener noreferrer"><span>Food in Copenhagen</span><span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://www.uber.com/dk/en/r/cities/taxi/copenhagen-capital-region-dk/" target="_blank" rel="noopener noreferrer"><span>Taxi in Denmark</span><span aria-hidden="true">↗</span></a></li>
         </ul>
     </section>
-
 </main>
 
-<footer class="site-footer">
-    <div class="footer-shell">
-        <div>
-            <a class="logo footer-brand" th:href="@{/}">
-                <span class="logo-badge badge-red">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 12L21 3L14 21L11 13L2 12Z" fill="#ffffff"/>
-                    </svg>
-                </span>
-                <span class="logo-text">
-                    <span class="main">Turistguide</span>
-                    <span class="sub">Explore Denmark</span>
-                </span>
-            </a>
-            <p class="footer-note">A small guide for big days out.</p>
-        </div>
-        <span class="footer-year">&copy; 2026 Tourist Attraction in Denmark.</span>
-        <div class="footer-contact">
-            <span class="footer-label">Contact</span>
-            <a href="mailto:hello@touristguide.example">hello@touristguide.example</a>
-            <span>Copenhagen &middot; Denmark</span>
-        </div>
-    </div>
-</footer>
+<footer th:replace="~{fragment :: footer}"></footer>
 </body>
 </html>

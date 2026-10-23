@@ -1,51 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:fragment="head(title)">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/main.css}">
+    <title th:text="${title} + ' · Turistguide'">Turistguide</title>
 </head>
 <body>
-<header th:fragment="header" class="site-header">
-  <nav class="nav-shell" aria-label="Main navigation">
-    <a class="logo" th:href="@{/}" aria-label="Tourist guide home">
-            <span class="logo-badge badge-red">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 12L21 3L14 21L11 13L2 12Z" fill="#ffffff"/>
-                </svg>
-            </span>
-      <span class="logo-text">
-                <span class="main">Turistguide</span>
-                <span class="sub">Explore Denmark</span>
-            </span>
-    </a>
-    <div class="nav-links">
-
+<header th:fragment="header(active)" class="site-header">
+    <div class="container nav">
+        <a class="brand" th:href="@{/}">TouristGuide</a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a th:href="@{/}" th:attr="aria-current=${active == 'home'} ? 'page'">Home</a>
+            <a th:href="@{/copenhagen}" th:attr="aria-current=${active == 'copenhagen'} ? 'page'">Copenhagen</a>
+            <a th:href="@{/attractions}" th:attr="aria-current=${active == 'attractions'} ? 'page'">Attractions</a>
+        </nav>
     </div>
-  </nav>
 </header>
 
 <footer th:fragment="footer" class="site-footer">
-  <div class="footer-shell">
-    <div>
-      <a class="logo footer-brand" th:href="@{/}">
-                <span class="logo-badge badge-red">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 12L21 3L14 21L11 13L2 12Z" fill="#ffffff"/>
-                    </svg>
-                </span>
-        <span class="logo-text">
-                    <span class="main">Turistguide</span>
-                    <span class="sub">Explore Denmark</span>
-                </span>
-      </a>
+    <div class="container footer-inner">
+        <span>&copy; 2026 Turistguide · Explore Denmark</span>
+        <a href="mailto:hello@touristguide.example">hello@touristguide.example</a>
     </div>
-    <span class="footer-year">&copy; 2026 Tourist Attraction in Denmark.</span>
-    <div class="footer-contact">
-      <span class="footer-label">Contact</span>
-      <a href="mailto:hello@touristguide.example">hello@touristguide.example</a>
-      <span>Copenhagen &middot; Denmark</span>
-    </div>
-  </div>
 </footer>
 </body>
 </html>

@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" th:href="@{/main.css}">
-    <title> Attractions</title>
-</head>
-
+<head th:replace="~{fragment :: head('Attractions')}"></head>
 <body>
-<div th:replace="~{fragment.html :: header}"></div>
+<header th:replace="~{fragment :: header('attractions')}"></header>
 
-<h1 class="page-title"> Tourist Attractions </h1>
-<div>
-
-    <div class="table-wrap">
-        <table class="bilag3 body"  >
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="attraction : ${attractions}">
-                <td th:text="${attraction.name}" ></td>
-                <td th:text="${attraction.description}"></td>
-                <td>
-                    <a th:href="@{/attractions/{name}/tags(name=${attraction.name})}">
-                    <button type="button" class="button button1"> Tags</button>
-                    </a>
-                </td>
-
-            </tr>
-            </tbody>
-        </table>
+<main class="container">
+    <div class="page-head">
+        <p class="eyebrow">Guide</p>
+        <h1>Attractions</h1>
+        <p class="lead">Pick a place to see what it is about and what it is good for.</p>
     </div>
-</div>
 
-    <button type="button" class="button button2"> Add Attraction </button>
+    <label class="sr-only" for="q" style="position:absolute;left:-9999px">Search attractions</label>
+    <input class="search" id="q" type="search" placeholder="Search by name, city or tag" autocomplete="off">
 
+    <ul class="rows" id="rows">
+        <li class="row" th:each="attraction : ${attractions}">
+            <div>
+                <h3 th:text="${attraction.name}">Name</h3>
+                <span class="row-city" th:text="${attraction.city}">City</span>
+            </div>
+            <p th:text="${attraction.description}">Description</p>
+            <div class="row-end">
+                <ul class="chips">
+                    <li class="chip" th:each="tag : ${attraction.tags}" th:text="${tag}">Tag</li>
+                </ul>
+                <a class="link" th:href="@{/attractions/{name}/tags(name=${attraction.name})}">Details →</a>
+            </div>
+        </li>
+    </ul>
+    <p class="empty" id="empty" hidden>No attractions match your search.</p>
+</main>
 
-<div th:replace="~{fragment.html :: footer}"></div>
+<footer th:replace="~{fragment :: footer}"></footer>
 
+<script>
+    const q = document.getElementById('q'), rows = [...document.querySelectorAll('#rows .row')], empty = document.getElementById('empty');
+    q.addEventListener('input', () => {
+        const t = q.value.trim().toLowerCase();
+        let n = 0;
+        rows.forEach(r => { const show = r.textContent.toLowerCase().includes(t); r.hidden = !show; if (show) n++; });
+        empty.hidden = n > 0;
+    });
+</script>
 </body>
-
 </html>
