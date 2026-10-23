@@ -9,15 +9,11 @@ public class TouristAttraction {
     private final String city;
     private final ArrayList <String> tags;
 
-    public TouristAttraction(String name, String description, String city) {
-        this(name, description, city, List.of());
-    }
-
     public TouristAttraction(String name, String description, String city, List<String> tags) {
         this.name = name;
         this.description = description;
         this.city = city;
-        this.tags = new ArrayList<>(tags);
+        this.tags = tags == null ? new ArrayList<>() : new ArrayList<>(tags);
     }
     public List<String> getTags() {
         return tags;
