@@ -1,0 +1,439 @@
+/* ---------- Basics / reset ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #223;
+    background-color: #f4f7fa;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Header / nav ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #10344c;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav-shell {
+    width: 100%;
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #2f7bb8;
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-badge {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.logo-badge svg {
+    width: 26px;
+    height: 26px;
+}
+
+.badge-red {
+    background: linear-gradient(135deg, #d62828 0%, #a4161a 100%);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+.logo-text .main {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', serif;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+.logo-text .sub {
+    color: #9fb8d1;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-top: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    margin-left: auto;
+}
+
+.nav-cta {
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.nav-cta:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Main content ---------- */
+.main-container {
+    flex: 1;
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    min-height: 78vh;
+    padding: 28px 6% 48px;
+    color: #fff;
+    background: url("/images/welcome-page1.jpg") center 30% / cover no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(180deg, rgba(8, 18, 30, 0.85) 0%, rgba(8, 18, 30, 0.35) 40%, rgba(8, 18, 30, 0) 65%),
+            linear-gradient(0deg, rgba(8, 18, 30, 0.75) 0%, rgba(8, 18, 30, 0) 25%);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 630px;
+}
+
+#main-header {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero-text {
+    margin-bottom: 22px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e4ecf2;
+}
+
+.hero-cta {
+    position: absolute;
+    left: 6%;
+    bottom: 32px;
+    display: inline-block;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.05rem;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-cta:hover {
+    text-decoration: underline;
+}
+
+.highlight {
+    max-width: 340px;
+    margin: 56px 0 56px 6%;
+    padding: 32px 28px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.highlight h2 {
+    margin-bottom: 16px;
+    color: #10344c;
+}
+
+.highlight ul {
+    list-style: none;
+}
+
+.highlight a {
+    display: block;
+    padding: 14px 4px;
+    color: #2f7bb8;
+    font-weight: bold;
+}
+
+.highlight a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background-color: #10344c;
+    color: #cdd9e2;
+    margin-top: auto;
+}
+
+.footer-shell {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    padding: 28px 48px;
+    gap: 20px;
+}
+
+.footer-shell > :first-child {
+    justify-self: start;
+}
+
+.footer-year {
+    justify-self: center;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.9rem;
+    justify-self: end;
+}
+
+.footer-brand {
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.footer-note {
+    font-size: 0.9rem;
+}
+
+.footer-label {
+    font-weight: bold;
+    color: #fff;
+}
+
+.footer-year {
+    font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 1024px) {
+    .footer-shell {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-shell > :first-child,
+    .footer-year,
+    .footer-contact {
+        justify-self: center;
+    }
+
+    .footer-contact {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-shell {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nav-links {
+        gap: 12px;
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 60vh;
+        align-items: flex-start;
+        padding: 32px 20px;
+    }
+
+    #main-header {
+        font-size: 2.2rem;
+    }
+}
+
+/* ---------- table ---------- */
+.page-title {
+    margin: 25px 65px;
+    padding: 20px 20px;
+    color: #10344c;
+    font-size: 1.8rem;
+}
+
+.bilag3.body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding: 0;
+    border-radius: 8px;
+}
+
+table.bilag3 {
+    width: 100%;
+    max-width: 760px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border: 1px solid #eee;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    table-layout: fixed;
+    padding: 10px 20px;
+    margin: 5px 76px;
+}
+
+.bilag3 td,
+.bilag3 th {
+    word-wrap: break-word;
+}
+
+.bilag3 th,
+.bilag3 td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.bilag3 th:first-child,
+.bilag3 td:first-child {
+    width: 25%;
+}
+
+.bilag3 td:first-child {
+    font-weight: 700;
+}
+
+.bilag3 th:last-child,
+.bilag3 td:last-child {
+    width: 20%;
+}
+
+.bilag3 th {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    background: #1e3a5f;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.bilag3 tbody tr:hover {
+    background: #f9f7f2;
+}
+
+.bilag3 tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ---------- buttons ---------- */
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button1 {
+    background-color: #1e3a5f;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 17px 40px;
+    border-radius: 6px;
+    margin-top: 6px;
+    transition: background 0.15s ease;
+}
+
+.button1:hover {
+    background-color: #16304f;
+}
+
+.button2 {
+    border: none;
+    color: white;
+    padding: 20px 55px;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 23px;
+    margin: 42px 131px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #4a6fa5;
+
+    /* small "Tags" action button inside the table, sized to match the mockup */
+    .button-tag {
+        border: none;
+        color: white;
+        background-color: #4a6fa5;
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+}

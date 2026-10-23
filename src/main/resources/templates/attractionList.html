@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" th:href="@{/main.css}">
+    <title> Attractions</title>
+</head>
+
+<body>
+<div th:replace="~{fragment.html :: header}"></div>
+
+<h1 class="page-title"> Tourist Attractions </h1>
+<div>
+
+    <div class="table-wrap">
+        <table class="bilag3 body"  >
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="attraction : ${attractions}">
+                <td th:text="${attraction.name}" ></td>
+                <td th:text="${attraction.description}"></td>
+                <td>
+                    <a th:href="@{/attractions/{name}/tags(name=${attraction.name})}">
+                    <button type="button" class="button button1"> Tags</button>
+                    </a>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <button type="button" class="button button2"> Add Attraction </button>
+
+
+<div th:replace="~{fragment.html :: footer}"></div>
+
+</body>
+
+</html>
