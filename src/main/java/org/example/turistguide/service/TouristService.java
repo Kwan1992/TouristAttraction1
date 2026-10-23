@@ -11,7 +11,6 @@ import java.util.List;
 public class TouristService {
     private final TouristRepository touristRepository;
 
-
     public TouristService(TouristRepository touristRepository) {
         this.touristRepository = touristRepository;
     }
@@ -24,11 +23,13 @@ public class TouristService {
         return touristRepository.findByName(name);
     }
 
+    public List<TouristAttraction> getTouristAttractionsByDescription(String description) {
+        return touristRepository.findTouristAttractionsByDescription(description);
+    }
+
+
     public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
         return touristRepository.save(touristAttraction);
-    }
-    public TouristAttraction addTagToAttraction(String name, String tag) {
-        return touristRepository.addTagToAttraction(name, tag);
     }
 
     public TouristAttraction updateTouristAttraction(String name, TouristAttraction touristAttraction) {
