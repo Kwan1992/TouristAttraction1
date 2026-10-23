@@ -72,7 +72,7 @@ public class TouristRepository {
     }
 
     public void populate() {
-        touristAttractions.add(new TouristAttraction("Tivoli", "19th-century amusement park with antique roller coaster & live entertainment program.","Copenhagen",List.of("Kids friendly","Nature")));
+        touristAttractions.add(new TouristAttraction("Tivoli", "19th-century amusement park with antique roller coaster & live entertainment program.","Copenhagen",List.of("Kids friendly","Nature"))); // DO IN ENUM FOR TAGS
         touristAttractions.add(new TouristAttraction("Rosenborg Castle", "Dutch Renaissance palace & gardens, including a museum housing the crown jewels, with guided tours.","Copenhagen",List.of("Museum","Nature")));
         touristAttractions.add(new TouristAttraction("Frederiksborg Castle", "Dutch Renaissance palace & gardens, including a museum housing the crown jewels, with guided tours.","Hillerød",List.of("Museum","Nature")));
         touristAttractions.add(new TouristAttraction("Nyhavn", "Copenhagen's Nyhaven, or \"New Harbor,\" is actually steeped in a long heritage. Colorful buildings line the canal and hint at a history of small-vessel traffic. ","Copenhagen",List.of("Free")));
